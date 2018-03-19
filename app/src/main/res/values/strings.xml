@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ContactApp</string>
+    <string name="error_message">
+        An error has occurred. Please try again by clicking REFRESH
+    </string>
+
+    <string name="editor_insert_item_failed">Error with saving item</string>
+    <string name="action_delete">Delete</string>
+
+    <string name="editor_insert_item_successful">Item saved</string>
+</resources>
