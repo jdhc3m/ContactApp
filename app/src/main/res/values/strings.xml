@@ -8,4 +8,26 @@
     <string name="action_delete">Delete</string>
 
     <string name="editor_insert_item_successful">Item saved</string>
+
+    <string name="no_data">Data is not available</string>
+    <string name="editor_activity_title_new_contact">New Contact</string>
+    <string name="editor_activity_title_update_contact">Update contact</string>
+    <string name="action_save">Save</string>
+    <string name="delete_dialog_msg">Delete this Item?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="editor_delete_contact_failed">Error deleting contact.</string>
+    <string name="editor_delete_contact_successful">Contact deleted</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discart</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="blank_name_msg">Name cannot be blank</string>
+    <string name="ok">Ok</string>
+    <string name="Email">Email</string>
+    <string name="name">Name</string>
+    <string name="DOB">DOB</string>
+    <string name="Bio">Bio</string>
+    <string name="invalid_cursor">this should only be called when the cursor is valid</string>
+    <string name="could_not_move_cursor">couldn\'t move cursor to position</string>
+    <string name="cannot_query_uri">Cannot query unknown URI</string>
 </resources>

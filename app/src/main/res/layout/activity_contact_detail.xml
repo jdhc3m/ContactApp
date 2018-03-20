@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jd.jd158.contactapp.UI.ContactDetail">
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          tools:layout_editor_absoluteX="8dp"
+          tools:layout_editor_absoluteY="8dp">
+
+         <ImageView
+             android:id="@+id/contact_detail_photo_imageView"
+             android:layout_width="175dp"
+             android:layout_height="175dp"
+             android:layout_gravity="center_horizontal"
+             android:scaleType="centerCrop"
+             app:srcCompat="@mipmap/ic_launcher" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="20dp"
+             android:text="@string/name" />
+
+         <EditText
+             android:id="@+id/contact_detail_name_txt"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:ems="10"
+             android:inputType="textCapSentences"
+             android:textSize="20sp" />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:text="@string/Email" />
+
+         <EditText
+             android:id="@+id/contact_detail_email_txt"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:ems="10"
+             android:inputType="textMultiLine"
+             android:textSize="20sp" />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:text="@string/DOB" />
+
+         <EditText
+             android:id="@+id/contact_detail_born_txt"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:ems="10"
+             android:inputType="textPersonName"
+             android:textSize="20sp" />
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:text="@string/Bio" />
+
+         <EditText
+             android:id="@+id/contact_detail_bio_txt"
+             android:layout_width="match_parent"
+             android:inputType="textMultiLine"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="8dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginTop="8dp"
+             android:ems="10"
+             android:textSize="20sp" />
+      </LinearLayout>
+   </ScrollView>
+</android.support.constraint.ConstraintLayout>

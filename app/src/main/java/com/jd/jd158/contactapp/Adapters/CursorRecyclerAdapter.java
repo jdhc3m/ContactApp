@@ -8,6 +8,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.support.v7.widget.RecyclerView;
+import android.view.ViewGroup;
+
+import com.jd.jd158.contactapp.R;
 
 abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
 
@@ -21,7 +24,7 @@ abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> ext
 
     private DataSetObserver mDataSetObserver;
 
-    public CursorRecyclerViewAdapter(Context context, Cursor cursor) {
+    public CursorRecyclerViewAdapter(Context context, Cursor cursor, CursorRecyclerViewAdapter mClickHandler) {
         mContext = context;
         mCursor = cursor;
         mDataValid = cursor != null;
@@ -60,12 +63,17 @@ abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> ext
     public abstract void onBindViewHolder(VH viewHolder, Cursor cursor);
 
     @Override
+    public VH onCreateViewHolder(ViewGroup parent, int viewType) {
+        return null;
+    }
+
+    @Override
     public void onBindViewHolder(VH viewHolder, int position) {
         if (!mDataValid) {
-            throw new IllegalStateException("this should only be called when the cursor is valid");
+            throw new IllegalStateException(String.valueOf(R.string.invalid_cursor));
         }
         if (!mCursor.moveToPosition(position)) {
-            throw new IllegalStateException("couldn't move cursor to position " + position);
+            throw new IllegalStateException(String.valueOf(R.string.could_not_move_cursor + position));
         }
         onBindViewHolder(viewHolder, mCursor);
     }
@@ -127,4 +135,5 @@ abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> ext
             //There is no notifyDataSetInvalidated() method in RecyclerView.Adapter
         }
     }
+
 }

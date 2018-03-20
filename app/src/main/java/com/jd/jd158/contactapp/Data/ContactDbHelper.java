@@ -24,8 +24,8 @@ public class ContactDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create a String that contains the SQL statement to create the pets table
-        String SQL_CREATE_INVENTORY_TABLE = "CREATE TABLE " + ContactContract.ContactEntry.TABLE_NAME + " ("
+        // Create a String that contains the SQL statement to create the contact table
+        String SQL_CREATE_CONTACT_TABLE = "CREATE TABLE " + ContactContract.ContactEntry.TABLE_NAME + " ("
                 + ContactContract.ContactEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ContactContract.ContactEntry.COLUMN_CONTACT_NAME + " TEXT NOT NULL, "
                 + ContactContract.ContactEntry.COLUMN_CONTACT_EMAIL + " TEXT DEFAULT 0, "
@@ -36,7 +36,7 @@ public class ContactDbHelper extends SQLiteOpenHelper {
 
 
         // Execute the SQL statement
-        db.execSQL(SQL_CREATE_INVENTORY_TABLE);
+        db.execSQL(SQL_CREATE_CONTACT_TABLE);
     }
 
     @Override

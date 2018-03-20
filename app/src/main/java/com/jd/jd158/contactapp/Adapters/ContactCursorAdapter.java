@@ -17,27 +17,47 @@ import com.squareup.picasso.Picasso;
  * Created by jd158 on 18/03/2018.
  */
 
-public class ContactCursorAdapter  extends CursorRecyclerViewAdapter<ContactCursorAdapter.ViewHolder>{
+public class ContactCursorAdapter  extends CursorRecyclerViewAdapter<ContactCursorAdapter.ViewHolder> implements View.OnClickListener{
 
-    private final Context context;
+    private Context context;
+    private static ClickListener clickListener;
 
-    public ContactCursorAdapter(Context context, Cursor cursor){
-        super(context,cursor);
+    public ContactCursorAdapter(Context context, Cursor cursor, CursorRecyclerViewAdapter mClickHandler){
+        super(context,cursor, mClickHandler);
         this.context = context;
 
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public ImageView mContactPicture;
         public TextView mContactName;
 
         public ViewHolder(View view) {
             super(view);
-            mContactPicture = (ImageView) view.findViewById(R.id.contact_picture_image);
-            mContactName = (TextView) view.findViewById(R.id.contact_name_txt);
+            view.setOnClickListener(this);
+            mContactPicture = view.findViewById(R.id.contact_picture_image);
+            mContactName = view.findViewById(R.id.contact_name_txt);
 
         }
+        public void onClick(View v) {
+            clickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        ContactCursorAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
+
     }
 
     @Override
@@ -60,5 +80,6 @@ public class ContactCursorAdapter  extends CursorRecyclerViewAdapter<ContactCurs
                 .error(R.drawable.ic_launcher_foreground)
                 .into(viewHolder.mContactPicture);
     }
+
 }
 
